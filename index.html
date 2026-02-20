@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Intensity Transformation Studio - Portfolio Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Image Intensity Transformation Studio</h1>
+    <p class="subtitle">
+        A Full-Stack Flask & OpenCV Web Application Demonstration
+    </p>
+
+    <!-- Demo Preview Section -->
+    <section class="demo-section">
+
+        <div class="image-section">
+            <div class="image-box">
+                <h3>Original</h3>
+                <img id="originalImage" src="demo-images/original.png">
+            </div>
+
+            <div class="image-box">
+                <h3>Processed</h3>
+                <img id="processedImage" src="demo-images/original.png">
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button onclick="changeImage('negative.png')">Negative</button>
+            <button onclick="changeImage('gamma.png')">Gamma</button>
+            <button onclick="changeImage('threshold.png')">Threshold</button>
+            <button onclick="changeImage('contrast.png')">Contrast</button>
+            <button onclick="resetImage()">Reset</button>
+        </div>
+
+    </section>
+
+    <!-- Histogram Preview
+    <section class="histogram-section">
+        <h2>Histogram Visualization</h2>
+        <img src="demo-images/histogram.jpg" class="histogram-img">
+    </section> -->
+
+    <!-- Architecture Section -->
+    <section class="info-section">
+        <h2>Project Architecture</h2>
+        <ul>
+            <li>Frontend: HTML, CSS, JavaScript (Fetch API)</li>
+            <li>Backend: Flask (Python)</li>
+            <li>Image Processing: OpenCV</li>
+            <li>Visualization: Matplotlib (Agg Backend)</li>
+            <li>Deployment: Gunicorn + Render</li>
+        </ul>
+    </section>
+
+    <section class="info-section">
+        <h2>Live Backend Version</h2>
+        <p>
+            Full dynamic version with real-time image processing:
+        </p>
+        <a href="https://image-transform-application.onrender.com" target="_blank">
+            Open Live Application
+        </a>
+    </section>
+
+</div>
+
+<script>
+function changeImage(imageName) {
+    document.getElementById("processedImage").src =
+        "demo-images/" + imageName;
+}
+
+function resetImage() {
+    document.getElementById("processedImage").src =
+        "demo-images/original.png";
+}
+</script>
+
+</body>
+</html>
